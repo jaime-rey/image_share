@@ -1,4 +1,7 @@
 if (Meteor.isClient) {
+
+  console.log("I am the Client");
+
   // counter starts at 0
   Session.setDefault('counter', 0);
 
@@ -17,6 +20,9 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+
+    console.log("I am the Server");
+
   Meteor.startup(function () {
     // code to run on server at startup
   });
