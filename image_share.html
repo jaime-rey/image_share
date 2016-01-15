@@ -11,5 +11,7 @@
 </body>
 
 <template name="images">
-    <img src="cav.jpg" alt="lannisters always paid their debts">
+    {{#each images}}
+    <img src="{{img_src}}" alt="{{img_alt}}"/>
+    {{/each}}
 </template>
