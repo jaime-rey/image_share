@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47a6eecc-e431-4632-bcee-58f465915e95" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_share.html" afterPath="$PROJECT_DIR$/image_share.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/image_share.tar.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="image_share.iws" />
@@ -268,7 +268,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452902037469</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="testing 2">
+      <created>1452902205146</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1452902205146</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -313,7 +319,8 @@
     <MESSAGE value="array each" />
     <MESSAGE value="boostrap added" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="testing 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
