@@ -274,7 +274,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452902205146</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="build">
+      <created>1452902454080</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1452902454080</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -320,7 +326,8 @@
     <MESSAGE value="boostrap added" />
     <MESSAGE value="testing" />
     <MESSAGE value="testing 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing 2" />
+    <MESSAGE value="build" />
+    <option name="LAST_COMMIT_MESSAGE" value="build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
