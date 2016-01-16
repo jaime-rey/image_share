@@ -22,7 +22,7 @@ if (Meteor.isClient) {
         },
         {
             img_src : "scp.jpg",
-            img_alt : "don´t blink"
+            img_alt : "don't blink"
         },
         {
             img_src : "smt.jpg",
@@ -30,8 +30,19 @@ if (Meteor.isClient) {
         },
 ]
     Template.images.helpers({images:img_data});
+
+    Template.images.events({
+
+        'click .js-image': event =>{
+            alert(event.target.alt);
+            $(event.target).css("width","50px");
+
+        }
+    });
 }
 
 if (Meteor.isServer) {
 
 }
+
+console.log("where am I running");
