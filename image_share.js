@@ -1,35 +1,8 @@
+Images = new  Mongo.Collection("images");
+
 if (Meteor.isClient) {
-    let img_data = [
-        {
-            img_src : "cav.jpg",
-            img_alt : "lannisters always paid their debts"
-        },
-        {
-            img_src : "ali.jpg",
-            img_alt : "alita is hot"
-        },
-        {
-            img_src : "crim.jpg",
-            img_alt : "crimson king"
-        },
-        {
-            img_src : "dwarf.jpg",
-            img_alt : "bleroooooooooooo"
-        },
-        {
-            img_src : "goat.jpg",
-            img_alt : "puta cabra"
-        },
-        {
-            img_src : "scp.jpg",
-            img_alt : "don't blink"
-        },
-        {
-            img_src : "smt.jpg",
-            img_alt : "yellow king"
-        },
-]
-    Template.images.helpers({images:img_data});
+
+    Template.images.helpers({images:Images.find()});
 
     Template.images.events({
 
@@ -37,6 +10,11 @@ if (Meteor.isClient) {
             alert(event.target.alt);
             $(event.target).css("width","50px");
 
+        },
+        'click .js-del-image': function () {
+            let image_id = this._id;
+            console.log("image_share.js says: Bond  " + image_id);
+            Images.remove({"_id":image_id});
         }
     });
 }
@@ -44,5 +22,3 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
 
 }
-
-console.log("where am I running");
