@@ -47,10 +47,16 @@
 </template>
 
 <template name="images">
-
+    <div>
     {{#if currentUser}}
     <button class="btn btn-success js-show-image-form">add image</button>
     {{/if}}
+    </div>
+    <h2>
+    {{#if filtering_images}}
+        Showing image by: {{getFilterUser}} -- <a href="#" class="js-unset-image-filter">Show all images</a>
+    {{/if}}
+    </h2>
     <div class="row">
         <div class="container">
             {{#each images}}
@@ -62,6 +68,9 @@
                     <div class="caption">
                         <h3>Thumbnail label</h3>
                         <p>{{img_alt}}</p>
+                        <p>User:
+                            <a href="#" class="js-set-image-filter"> {{getUser createdBy}}</a>
+                        </p>
                         <p>
                             {{> starsRating size='lg' mutable=true class="js-rate-image" imageId=_id}}
                         </p>
