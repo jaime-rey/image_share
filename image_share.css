@@ -1,1 +1,14 @@
 /* CSS declarations go here */
+label { width: 80px; }
+
+.thumbnail {
+    height: 500px;
+}
+
+.thumbnail-img {
+    max-height: 300px;
+}
+
+body{
+    padding-top: 60px;
+}
