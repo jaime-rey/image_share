@@ -12,8 +12,6 @@ if (Meteor.isServer){
                     }
                 );
             }// end of for insert images
-            // count the images!x
-            console.log("startup.js says: "+Images.find().count());
         }// end of if have no images
     });
 }
