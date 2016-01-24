@@ -4,18 +4,38 @@
 
 <body>
 
-    {{> image_add_form}}
+{{> image_add_form }}
+
+</body>
+
+<template name="ApplicationLayout">
+    {{> yield "navbar"}}
+    {{> yield "main"}}
+</template>
+
+<template name="welcome">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Image share <!-- {{username}}--></h1>
+            <a href="/images" class="btn btn-info">ENTER</a>
+        </div>
+    </div>
+</template>
+
+<template name="image">
+    <div class="container">
+        <h2>{{img_alt}}</h2>
+        <a href="/images"><img class="single-img" src="{{img_src}}"/></a>
+    </div>
+</template>
+
+<template name="navbar">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             {{>loginButtons}}
         </div>
     </nav>
-
-    <div id="images" class="container">
-        <h1>Image share -- {{username}}</h1>
-        {{> images}}
-    </div>
-</body>
+</template>
 
 <template name="image_add_form">
 
@@ -42,12 +62,10 @@
        </div>
    </div>
 
-
-
 </template>
 
 <template name="images">
-    <div>
+    <div id="images" class="container">
     {{#if currentUser}}
     <button class="btn btn-success js-show-image-form">add image</button>
     {{/if}}
@@ -63,8 +81,10 @@
 
             <div class="col-xs-12 col-md-3" id="{{_id}}">
                 <div class="thumbnail">
+                    <a href="/image/{{_id}}">
                     <img class="js-image thumbnail-img" src="{{img_src}}"
                          alt="{{img_alt}}"/>
+                    </a>
                     <div class="caption">
                         <h3>Thumbnail label</h3>
                         <p>{{img_alt}}</p>

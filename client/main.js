@@ -1,7 +1,39 @@
 /**
  * Created by jaime on 19/01/2016.
  */
-console.log("running on the client");
+
+Router.configure({
+    layoutTemplate :'ApplicationLayout'
+});
+
+Router.route( '/', function(){
+    this.render( 'welcome', {
+        to: "main"
+    });
+});
+
+Router.route('/images', function () {
+    this.render( 'navbar', {
+        to: "navbar"
+    });
+
+    this.render( 'images', {
+        to: "main"
+    });
+});
+
+Router.route('/image/:_id', function () {
+    this.render( 'navbar', {
+        to: "navbar"
+    });
+
+    this.render( 'image', {
+        to: "main",
+        data: function() {
+            return Images.findOne({_id:this.params._id});
+        }
+    });
+});
 
 Session.set("imageLimit", 8);
 
@@ -70,11 +102,8 @@ Template.images.helpers({
 
 Template.images.events({
 
-    'click .js-image': event =>{
-        alert(event.target.alt);
-        $(event.target).css("width","50px");
 
-    },
+
     'click .js-del-image': function () {
         let image_id = this._id;
         $("#"+image_id).hide('slow', () =>{
@@ -90,6 +119,8 @@ Template.images.events({
             {$set: {rating:rating}});
     },
     'click .js-show-image-form': function(event){
+        console.log("add img btn");
+        console.log($("#image_add_form"));
         $("#image_add_form").modal('show');
     },
     'click .js-set-image-filter':function(event){
@@ -97,6 +128,12 @@ Template.images.events({
     },
     'click .js-unset-image-filter':() => {
         Session.set("userFilter", undefined);
+    },
+    'mouseenter .js-image': event =>{
+        $(event.target).css( "height", "280px" );
+    },
+    'mouseleave .js-image': event =>{
+        $(event.target).css( "height", "180px");
     }
 });
 
