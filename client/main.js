@@ -20,6 +20,10 @@ Router.route('/images', function () {
     this.render( 'images', {
         to: "main"
     });
+
+    this.render('image_add_form', {
+        to:"modal"
+    });
 });
 
 Router.route('/image/:_id', function () {
@@ -119,8 +123,6 @@ Template.images.events({
             {$set: {rating:rating}});
     },
     'click .js-show-image-form': function(event){
-        console.log("add img btn");
-        console.log($("#image_add_form"));
         $("#image_add_form").modal('show');
     },
     'click .js-set-image-filter':function(event){
